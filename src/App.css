@@ -1,0 +1,30 @@
+#logo-container {
+  height: 80px !important;
+  margin-bottom: 0px;
+}
+
+#logo-container > img {
+  height: auto; 
+  width: auto; 
+  max-width: 100px; 
+  max-height: 100px;
+  display: block;
+  margin-top: 4px;
+  margin-left: 0px;
+  margin-right: auto;
+  width: 50%;
+}
+
+.with-background-color {
+  background-color: #38435a!important;
+  color: white;
+}
+
+.no-margin-no-padding{
+  padding: 0;
+  margin: 0;
+}
+
+.with-padding-top{
+  padding-top: 18px !important;
+}
