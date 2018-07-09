@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, Router } from 'react-router-dom';
 import App from './App';
+import Bulding from './pages/building'
 import Callback from './callback/callback';
 import Auth from './auth/auth';
 import history from './history';
@@ -20,7 +21,7 @@ export const makeMainRoutes = () => {
       <div>
         <Route path="/" exact component={(props) => <App auth={auth} {...props} />} />
         <Route path="/home" exact component={(props) => <App auth={auth} {...props} />} />
-        <Route path="/building" exact component={(props) => <App auth={auth} {...props} />} />
+        <Route path="/building" exact component={(props) => <Bulding auth={auth} {...props} />} />
         <Route path="/bridge" exact component={(props) => <App auth={auth} {...props} />} />
         <Route path="/historical-building" exact component={(props) => <App auth={auth} {...props} />} />
         <Route path="/callback" exact component={(props) => {

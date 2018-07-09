@@ -35,17 +35,17 @@ class Title extends Component {
             <h3>Analisís del daño</h3>
           </Col>
           <Col s={4} className='with-padding-top'>
-            <Input s={12} label='Tipo' icon='domain' type='select'  defaultValue='home' onChange={this.handleChangeOfType}>
-              <option value='home'>
+            <Input s={12} label='Tipo' icon='domain' type='select' defaultValue={this.props.page} onChange={this.handleChangeOfType}>
+              <option value='home' page='home'>
                 Viviendas
               </option>
-              <option value='building'>
+              <option value='building' page='building'>
                 Edificios
               </option>
-              <option value='bridge'>
+              <option value='bridge' page='bridge'>
                 Puentes urbanos
               </option>
-              <option value='historical-building'>
+              <option value='historical-building' page='historical-building'>
                 Edificios históricos
               </option>
             </Input>

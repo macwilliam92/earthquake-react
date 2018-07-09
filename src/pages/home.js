@@ -154,10 +154,8 @@ class Home extends Component  {
       }
     }
 
-    
-  
     updateGraphsData(){
-      var API_HOST = 'https://safe-anchorage-48646.herokuapp.com'
+      var API_HOST = process.env.REACT_APP_EARTHQUAKE_API_HOST
       axios.get(`${API_HOST}/api/apartment/vulnerability-graph?masonry=${this.state.masonry}&floors=${this.state.floors}&zone=${this.state.zone}`).then(
         ({data}) => {
           data = data.map(({simulation, vulnerability}) => { return {x: simulation, y: vulnerability}})
@@ -211,7 +209,7 @@ class Home extends Component  {
     render(){
       return (
         <div>
-          <Title auth={this.props.auth} history={this.props.history}/>
+          <Title page={'home'} auth={this.props.auth} history={this.props.history}/>
           <Col s={12} className='with-padding-top'>
             <HomeForm handler={this.handlerEvent}/>
             <HomeGraph 
