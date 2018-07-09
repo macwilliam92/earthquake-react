@@ -22,7 +22,7 @@ class App extends Component {
     if(!isAuthenticated()) this.login();
 
     return (
-      <Home auth={this.props.auth}/>
+      <Home auth={this.props.auth} history={this.props.history}/>
     );
   }
 }

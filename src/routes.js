@@ -20,6 +20,9 @@ export const makeMainRoutes = () => {
       <div>
         <Route path="/" exact component={(props) => <App auth={auth} {...props} />} />
         <Route path="/home" exact component={(props) => <App auth={auth} {...props} />} />
+        <Route path="/building" exact component={(props) => <App auth={auth} {...props} />} />
+        <Route path="/bridge" exact component={(props) => <App auth={auth} {...props} />} />
+        <Route path="/historical-building" exact component={(props) => <App auth={auth} {...props} />} />
         <Route path="/callback" exact component={(props) => {
           handleAuthentication(props);
           return <Callback {...props} /> 

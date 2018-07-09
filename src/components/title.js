@@ -7,12 +7,16 @@ class Title extends Component {
   constructor(props) {
     super(props);
     this.logout = this.logout.bind(this);
+    this.handleChangeOfType = this.handleChangeOfType.bind(this);
   }
-
 
   logout(){
     this.props.auth.logout();
-  } 
+  }
+
+  handleChangeOfType(event){
+    this.props.history.replace(`/${event.target.value}`);
+  }
 
   render() {
     return (
@@ -31,8 +35,8 @@ class Title extends Component {
             <h3>Analisís del daño</h3>
           </Col>
           <Col s={4} className='with-padding-top'>
-            <Input s={12} label='Tipo' icon='domain' type='select'  defaultValue='house'>
-              <option value='house'>
+            <Input s={12} label='Tipo' icon='domain' type='select'  defaultValue='home' onChange={this.handleChangeOfType}>
+              <option value='home'>
                 Viviendas
               </option>
               <option value='building'>
@@ -41,7 +45,7 @@ class Title extends Component {
               <option value='bridge'>
                 Puentes urbanos
               </option>
-              <option value='historical_building'>
+              <option value='historical-building'>
                 Edificios históricos
               </option>
             </Input>

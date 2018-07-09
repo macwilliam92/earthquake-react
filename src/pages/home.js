@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Row, Col, Input } from 'react-materialize'
+import { Row, Col, Input, Table } from 'react-materialize'
 import Title from '../components/title'
 import LinearGraph from '../components/lineargraph'
 import axios from 'axios';
@@ -46,17 +46,30 @@ class HomeForm extends Component {
         <div>
           <Row>
             <Col>
-              <h6>Resultados</h6>
+              <h5>Resultados</h5>
             </Col>
           </Row>
           <Row>
-            <Input s={4} label="Índice de vulnerabilidad" value={this.state.ind} disabled />
-            <Input s={4} label="Nivel de daño" value={this.state.nd} disabled />
-            <Input s={4} label="Nivel de vulnerabilidad" value={this.state.nv} disabled />
+            <Table centered responsive>
+              <thead>
+                <tr>
+                  <th>Índice de vulnerabilidad</th>
+                  <th>Nivel de daño</th>
+                  <th>Nivel de vulnerabilidad</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{this.state.ind}</td>
+                  <td>{this.state.nd}</td>
+                  <td>{this.state.nv}</td>
+                </tr>
+              </tbody>
+            </Table>
           </Row>
           <Row>
             <Col>
-              <h6>Costos</h6>
+              <h5>Costos</h5>
             </Col>
           </Row>
           <Row>
@@ -64,8 +77,20 @@ class HomeForm extends Component {
             <Input s={6} id='meters' label="Metros cuadrados por vivienda" onChange={this.props.handler} defaultValue='1'/>
           </Row>
           <Row>
-            <Input s={6} label="Costo por metro cuadrado" value={this.state.nvCm2} disabled />
-            <Input s={6} label="Costo total" value={this.state.cost} disabled />
+            <Table centered responsive>
+              <thead>
+                <tr>
+                  <th>Costo por metro cuadrado</th>
+                  <th>Costo total</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{this.state.nvCm2}</td>
+                  <td>{this.state.cost}</td>
+                </tr>
+              </tbody>
+            </Table>
           </Row>
         </div>
       )
@@ -186,7 +211,7 @@ class Home extends Component  {
     render(){
       return (
         <div>
-          <Title auth={this.props.auth}/>
+          <Title auth={this.props.auth} history={this.props.history}/>
           <Col s={12} className='with-padding-top'>
             <HomeForm handler={this.handlerEvent}/>
             <HomeGraph 
