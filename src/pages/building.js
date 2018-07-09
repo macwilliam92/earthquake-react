@@ -57,7 +57,7 @@ class BuildingGraph extends Component {
     return (
       <Row>
         <LinearGraph data={ this.state.dataVulnerabilityGraph } labelX={'Simulación'} labelY={'Vulnerabilidad'}/>
-        <LinearGraph data={ this.state.dataVulnerabilityGraph } labelX={'Simulación'} labelY={'Espectro de riesgo'}/>
+        <LinearGraph data={ this.state.dataSpectrumGraph } labelX={'Simulación'} labelY={'Espectro de riesgo'}/>
       </Row>
     );
   }
@@ -116,8 +116,8 @@ class Building extends Component {
         this.setState(newState)
       }
     )
-    /*
-    axios.get(`${API_HOST}/api/apartment/spectrum-graph?zone=${this.state.zone}`).then(
+    
+    axios.get(`${API_HOST}/api/building/spectrum-graph?zone=${this.state.zone}`).then(
       ({data}) => {
         data = data.map(({simulation, spectrum}) => { return {x: simulation, y: spectrum}})
         var newState = this.state
@@ -125,7 +125,7 @@ class Building extends Component {
         this.setState(newState)
       }
     )
-
+    /*
     axios.get(`${API_HOST}/api/apartment/vulnerability-stats?masonry=${this.state.masonry}&floors=${this.state.floors}&zone=${this.state.zone}&number=${this.state.number}&meters=${this.state.meters}`).then(
       ({data}) => {
         var newState = this.state
