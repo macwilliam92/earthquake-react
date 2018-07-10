@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Row, Col, Input, Table } from 'react-materialize'
 import Title from '../components/title'
 import LinearGraph from '../components/lineargraph'
+import DivWithGbColor from '../components/divwithbgcolor'
+import { damageOptions, vulnerabilityOptions } from '../constants'
 import axios from 'axios';
 
 class HomeForm extends Component {
@@ -61,8 +63,12 @@ class HomeForm extends Component {
               <tbody>
                 <tr>
                   <td>{this.state.ind}</td>
-                  <td>{this.state.nd}</td>
-                  <td>{this.state.nv}</td>
+                  <td>
+                    <DivWithGbColor options={damageOptions} selected={this.state.nd} />
+                  </td>
+                  <td>
+                    <DivWithGbColor options={vulnerabilityOptions} selected={this.state.nv} />
+                  </td>
                 </tr>
               </tbody>
             </Table>
